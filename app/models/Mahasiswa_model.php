@@ -36,8 +36,11 @@ class Mahasiswa_model {
         $this->db->bind(':nip', $data["nip"]);
         $this->db->bind(':email', $data["email"]);
 
-        $this->db->execute();
-        return $this->db->rowCount();
+        if($this->db->execute()) {
+            return $this->db->rowCount();
+        } else {
+            return 0;
+        }
     }
 
 }

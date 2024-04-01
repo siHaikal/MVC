@@ -48,8 +48,13 @@ class Database {
     }
 
     public function execute() {
-        $this->stmt->execute();
+        try {
+            $this->stmt->execute();
+        } catch(PDOException $e){
+            echo "gagal" . "<br>" . $e->getMessage();
+        }
     }
+
 
     public function resultSet() {
         $this->execute();

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['title']; ?></title>
     <link href="<?= BASEURL; ?>css/bootstrap.css" rel="stylesheet" />
+    <link href="<?= BASEURL; ?>css/style.css" rel="stylesheet" />
 </head>
 <body>
 <ul class="nav justify-content-center p-3">

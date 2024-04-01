@@ -8,10 +8,13 @@
         <div class="card-body">
             <h5 class="card-title"><?= $data['mhs']['nama']; ?></h5>
             <p class="card-text">
-                <ul>
-                    <li>NIP : <?= $data['mhs']['nip']; ?></li>
-                    <li>Email : <?= $data['mhs']['email']; ?></li>
-                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">NIP : <?= $data['mhs']['nip']; ?></li>
+                    <li class="list-group-item">Email : <?= $data['mhs']['email']; ?></li>
+                <div class="mt-4 ">
+                    <a class="btn btn-primary" href="#" role="button">Update</a>
+                    <a class="btn btn-danger" href="#" role="button">Hapus</a>
+                </div>
             </p>
         </div>
         </div>
