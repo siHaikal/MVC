@@ -43,6 +43,22 @@ class Mahasiswa_model {
         }
     }
 
+    public function updateData ($data) 
+    {
+        $query = "UPDATE " . $this->table . " SET nama=:nama, nip=:nip, email=:email WHERE id=:id";
+        $this->db->query($query);
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':nama', $data['nama']);
+        $this->db->bind(':nip', $data['nip']);
+        $this->db->bind(':email', $data['email']);
+
+        if($this->db->execute()) {
+            return $this->db->rowCount();
+        } else {
+            return 0;
+        }
+    }
+
 }
 
 ?>

@@ -28,6 +28,23 @@ class Mahasiswa extends Controller{
             exit;
         }
     }
+
+    public function update() {
+        $id = isset($_POST['id'])? $_POST['id'] : null;
+        echo json_encode($this->model('Mahasiswa_model')->getDetail($id));
+    }
+
+    public function ubah () {
+        if ($this->model('Mahasiswa_model')->updateData($_POST)  > 0 ) {
+            Flasher::setFlash('Berhasil','diupdate', 'success');
+            header("Location: ".BASEURL."/mahasiswa");
+            exit;
+        } else {
+            Flasher::setFlash('Berhasil','diupdate', 'success');
+            header("Location: ".BASEURL."/mahasiswa");
+            exit;
+        }
+    }
 }
 
 
